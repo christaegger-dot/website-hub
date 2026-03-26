@@ -116,7 +116,7 @@ h1 {
   max-width: 11ch;
   margin-top: 0.35rem;
   font-size: clamp(2.35rem, 3.8vw, 3.55rem);
-  line-height: 0.92;
+  line-height: 1;
   letter-spacing: -0.04em;
   font-weight: 600;
   text-wrap: balance;
@@ -154,7 +154,9 @@ h1 {
 
 .hero-facts dd {
   font-size: 0.92rem;
+  line-height: 1.35;
   color: var(--text);
+  overflow-wrap: anywhere;
 }
 
 .content {
@@ -355,6 +357,23 @@ h3 {
 
 .page-footer p {
   font-size: 0.84rem;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .links a:hover,
+  .links a:focus-visible {
+    transform: none;
+  }
 }
 
 @media (max-width: 980px) {
